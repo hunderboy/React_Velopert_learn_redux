@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 // import { createStore } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './modules';
+import { composeWithDevTools } from '@redux-devtools/extension';
 
 // 주의사항
 // createStore는 완전히 제거된 것은 아니며, 여전히 사용할 수 있습니다.
@@ -18,6 +19,7 @@ import rootReducer from './modules';
 // const store = createStore(rootReducer); // 스토어를 만듭니다.
 const store = configureStore({
   reducer: rootReducer,
+  devTools: composeWithDevTools,
 });
 console.log(store.getState());
 
